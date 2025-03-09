@@ -20,8 +20,8 @@ int main()
 
 
     std::cout << "\n\n";
-    std::cout << "10 random bytes: ";
-    auto bytes = bbs.nextBytes(10);
+    std::cout << "16 random bytes: ";
+    auto bytes = bbs.nextBytes(16);
     for (auto b : bytes)
     {
         std::printf("%02x", b);
