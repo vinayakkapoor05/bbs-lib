@@ -30,3 +30,19 @@ target_link_libraries(bbs_production PUBLIC gmp gmpxx)
 
 add_executable(production_demo examples/production_demo.cpp)
 target_link_libraries(production_demo PRIVATE bbs_production)
+
+add_executable(encryption_demo examples/encryption_demo.cpp)
+target_link_libraries(encryption_demo PRIVATE bbs_production)
+
+
+# Utils Library (for cryptanalysis)
+
+add_library(bbs_utils STATIC 
+    src/bbs_utils.cpp
+)
+target_include_directories(bbs_utils 
+    PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
+add_executable(factor_demo examples/factor_demo.cpp)
+target_link_libraries(factor_demo PRIVATE bbs_toy bbs_utils)
