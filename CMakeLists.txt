@@ -46,3 +46,22 @@ target_include_directories(bbs_utils
 
 add_executable(factor_demo examples/factor_demo.cpp)
 target_link_libraries(factor_demo PRIVATE bbs_toy bbs_utils)
+
+
+add_executable(partial_seed_demo examples/partial_seed_demo.cpp)
+target_link_libraries(partial_seed_demo PRIVATE bbs_toy)
+
+
+# Side-Channel Library & Demo
+
+
+add_library(bbs_sidechannel STATIC 
+    src/bbs_sidechannel.cpp
+)
+
+target_include_directories(bbs_sidechannel 
+    PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
+add_executable(sidechannel_demo examples/sidechannel_demo.cpp)
+target_link_libraries(sidechannel_demo PRIVATE bbs_toy bbs_sidechannel)
