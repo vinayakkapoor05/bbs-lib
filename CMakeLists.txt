@@ -76,3 +76,12 @@ target_link_libraries(exp_factor_time_vs_partial_seed PRIVATE bbs_toy bbs_utils)
 
 add_executable(exp_factor_time_vs_known_pq experiments/exp_factor_time_vs_known_pq.cpp)
 target_link_libraries(exp_factor_time_vs_known_pq PRIVATE bbs_toy bbs_utils)
+
+
+# Tests
+add_executable(randomness_test_toy tests/randomness_test_toy.cpp)
+target_link_libraries(randomness_test_toy PRIVATE bbs_toy)
+
+
+add_executable(randomness_test_prod tests/randomness_test_prod.cpp)
+target_link_libraries(randomness_test_prod PRIVATE bbs_production)
