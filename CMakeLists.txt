@@ -65,3 +65,14 @@ target_include_directories(bbs_sidechannel
 
 add_executable(sidechannel_demo examples/sidechannel_demo.cpp)
 target_link_libraries(sidechannel_demo PRIVATE bbs_toy bbs_sidechannel)
+
+# Experiments
+
+add_executable(exp_factor_time_vs_n experiments/exp_factor_time_vs_n.cpp)
+target_link_libraries(exp_factor_time_vs_n PRIVATE bbs_toy bbs_utils)
+
+add_executable(exp_factor_time_vs_partial_seed experiments/exp_factor_time_vs_partial_seed.cpp)
+target_link_libraries(exp_factor_time_vs_partial_seed PRIVATE bbs_toy bbs_utils)
+
+add_executable(exp_factor_time_vs_known_pq experiments/exp_factor_time_vs_known_pq.cpp)
+target_link_libraries(exp_factor_time_vs_known_pq PRIVATE bbs_toy bbs_utils)
